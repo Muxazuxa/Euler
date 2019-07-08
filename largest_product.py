@@ -21,14 +21,22 @@ s = """
 71636269561882670428252483600823257530420752963450
 """
 
-s = ''.join(s.splitlines())
+def largest_product(n):
+    global s
 
-a = []
-for i in range(len(s)-12):
-    temp = s[i:i+13]
-    sum = 1
-    for j in temp:
-        sum *= int(j)
-    a.append(sum)
+    s = ''.join(s.splitlines())
 
-print(max(a))
+    if n < 1:
+        return 'Number must be greater 1'
+    elif type(n) is not int:
+        return 'Number must be Integer!'
+    else:
+        a = []
+        for i in range(len(s)-(n-1)):
+            temp = s[i:i+n]
+            sum = 1
+            for j in temp:
+                sum *= int(j)
+            a.append(sum)
+
+        return max(a)

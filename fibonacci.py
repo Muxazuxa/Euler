@@ -1,13 +1,14 @@
-a = [0,1]
-ev_sum = 0
-b = 0
-while True:
-    b = a[-2] + a[-1]
-    if b >= 4000000:
-        break
-    a.append(b)
-    if b % 2 == 0:
-        ev_sum += b
-    print(b)
-
-print("Summ of all even numbers is: " + str(ev_sum))
+def fibonacci_even_sum(n):
+    if n < 0:
+        return 'Number must be positive'
+    elif type(n) is not int:
+        return 'Number must be Integer!'
+    else:
+        a = [0,1]
+        summ = 0
+        while a[-1] <= n:
+            b = a[-1] + a[-2]
+            a.append(b)
+            if b % 2 == 0:
+                summ += b
+        return summ
