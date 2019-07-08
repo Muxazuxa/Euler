@@ -10,7 +10,7 @@ class Test(unittest.TestCase):
         self.assertEqual(largest_product(-1), 'Number must be greater 1')
 
     def test_answer(self):
-        self.assertTrue(largest_product(4), 5832) #2,8 First even numbers of Fibonacci lt 10
+        self.assertTrue(largest_product(4), 5832)
 
 
 if __name__ == '__main__':
